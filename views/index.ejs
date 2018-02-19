@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+<title>TI Calculation</title>
+</head>
+<script>
+</script> 
+<body>
+<h1><center> TI Calculation </center> </h1>
+<p id="status"></p>
+<label> Country </label> 
+<select id="country" name="country">
+<option value=0.93>Albania</option>
+<option value=1.11>Armenia</option>
+<option value=3.64>Azerbaijan</option>
+<option value=-2.1>Belarus</option>
+<option value=0.22>Bosnia and Herzegovina</option>
+<option value=-5.08>Bulgaria</option>
+<option value=-4.93>Croatia</option>
+<option value=-6.98>Cyprus</option>
+<option value=6.05>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=-0.02>Georgia</option>
+<option value=-6.18>Greece</option>
+<option value=-5.64>Hungary</option>
+<option value=2.72>Jordan</option>
+<option value=2.39>Kazakhstan</option>
+<option value=5.69>Kosovo</option>
+<option value=4.86>Kyrgyz Republic</option>
+<option value=-5.72>Latvia</option>
+<option value=-5.14>Lithuania</option>
+<option value=-1.71>Macedonia FYR</option>
+<option value=0.29>Moldova</option>
+<option value=1.85>Mongolia</option>
+<option value=-0.18>Montenegro</option>
+<option value=2.74>Morocco</option>
+<option value=-5.45>Poland</option>
+<option value=-4.54>Romania</option>
+<option value=-2.06>Russia</option>
+<option value=0.1>Serbia</option>
+<option value=-7.9>Slovak Republic</option>
+<option value=-8.27>Slovenia</option>
+<option value=6.53>Tajikistan</option>
+<option value=1.47>Tunisia</option>
+<option value=-2.27>Turkey</option>
+<option value=10>Turkmenistan</option>
+<option value=0.02>Ukraine</option>
+<option value=6.92>Uzbekistan</option>
+<option value=2.58>Albania</option>
+<option value=-0.48>Armenia</option>
+<option value=0.33>Azerbaijan</option>
+<option value=2.51>Belarus</option>
+<option value=7.46>Bosnia and Herzegovina</option>
+<option value=-0.15>Bulgaria</option>
+<option value=-1.66>Croatia</option>
+<option value=-5.14>Cyprus</option>
+<option value=5.68>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=-4.55>Georgia</option>
+<option value=2.32>Greece</option>
+<option value=-2.27>Hungary</option>
+<option value=-2.1>Jordan</option>
+<option value=-1.37>Kazakhstan</option>
+<option value=6.92>Kosovo</option>
+<option value=10>Kyrgyz Republic</option>
+<option value=-4.92>Latvia</option>
+<option value=-4.96>Lithuania</option>
+<option value=-1.88>Macedonia FYR</option>
+<option value=5.35>Moldova</option>
+<option value=1.13>Mongolia</option>
+<option value=-1.6>Montenegro</option>
+<option value=2.23>Morocco</option>
+<option value=-5.14>Poland</option>
+<option value=-1.09>Romania</option>
+<option value=0.74>Russia</option>
+<option value=1.94>Serbia</option>
+<option value=-1.12>Slovak Republic</option>
+<option value=-3.73>Slovenia</option>
+<option value=7.25>Tajikistan</option>
+<option value=2.38>Tunisia</option>
+<option value=-2.23>Turkey</option>
+<option value=6.16>Turkmenistan</option>
+<option value=8.08>Ukraine</option>
+<option value=2.47>Uzbekistan</option>
+<option value=0>Albania</option>
+<option value=0>Armenia</option>
+<option value=0>Azerbaijan</option>
+<option value=0>Belarus</option>
+<option value=0>Bosnia and Herzegovina</option>
+<option value=0>Bulgaria</option>
+<option value=0>Croatia</option>
+<option value=0>Cyprus</option>
+<option value=0>Egypt</option>
+<option value=0>Estonia</option>
+<option value=0>Georgia</option>
+<option value=0>Greece</option>
+<option value=0>Hungary</option>
+<option value=0>Jordan</option>
+<option value=0>Kazakhstan</option>
+<option value=0>Kosovo</option>
+<option value=0>Kyrgyz Republic</option>
+<option value=0>Latvia</option>
+<option value=0>Lithuania</option>
+<option value=0>Macedonia FYR</option>
+<option value=0>Moldova</option>
+<option value=0>Mongolia</option>
+<option value=0>Montenegro</option>
+<option value=0>Morocco</option>
+<option value=0>Poland</option>
+<option value=0>Romania</option>
+<option value=0>Russia</option>
+<option value=0>Serbia</option>
+<option value=0>Slovak Republic</option>
+<option value=0>Slovenia</option>
+<option value=0>Tajikistan</option>
+<option value=0>Tunisia</option>
+<option value=0>Turkey</option>
+<option value=0>Turkmenistan</option>
+<option value=0>Ukraine</option>
+<option value=0>Uzbekistan</option>
+<option value=3.01>Albania</option>
+<option value=2.28>Armenia</option>
+<option value=4.61>Azerbaijan</option>
+<option value=5.79>Belarus</option>
+<option value=1.03>Bosnia and Herzegovina</option>
+<option value=-3.62>Bulgaria</option>
+<option value=-3.88>Croatia</option>
+<option value=1.68>Cyprus</option>
+<option value=0.78>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=-0.39>Georgia</option>
+<option value=-4.12>Greece</option>
+<option value=-4.04>Hungary</option>
+<option value=-0.23>Jordan</option>
+<option value=-0.21>Kazakhstan</option>
+<option value=2.09>Kosovo</option>
+<option value=2.52>Kyrgyz Republic</option>
+<option value=-7.96>Latvia</option>
+<option value=-6.27>Lithuania</option>
+<option value=1.18>Macedonia FYR</option>
+<option value=1.34>Moldova</option>
+<option value=4.18>Mongolia</option>
+<option value=-1.27>Montenegro</option>
+<option value=-1.76>Morocco</option>
+<option value=-7.9>Poland</option>
+<option value=-5.31>Romania</option>
+<option value=-1.33>Russia</option>
+<option value=0.22>Serbia</option>
+<option value=-7.89>Slovak Republic</option>
+<option value=-7.12>Slovenia</option>
+<option value=7.45>Tajikistan</option>
+<option value=3.45>Tunisia</option>
+<option value=-5.7>Turkey</option>
+<option value=10>Turkmenistan</option>
+<option value=4.03>Ukraine</option>
+<option value=6.53>Uzbekistan</option>
+<option value=2.93>Albania</option>
+<option value=1.73>Armenia</option>
+<option value=4.38>Azerbaijan</option>
+<option value=4.35>Belarus</option>
+<option value=1.2>Bosnia and Herzegovina</option>
+<option value=-2.33>Bulgaria</option>
+<option value=-4.19>Croatia</option>
+<option value=3.12>Cyprus</option>
+<option value=-1.09>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=0.03>Georgia</option>
+<option value=-0.05>Greece</option>
+<option value=-3.3>Hungary</option>
+<option value=0.7>Jordan</option>
+<option value=-2.28>Kazakhstan</option>
+<option value=1.24>Kosovo</option>
+<option value=2.02>Kyrgyz Republic</option>
+<option value=-7.28>Latvia</option>
+<option value=-5.74>Lithuania</option>
+<option value=1.63>Macedonia FYR</option>
+<option value=1.63>Moldova</option>
+<option value=3.48>Mongolia</option>
+<option value=-1.43>Montenegro</option>
+<option value=-6.77>Morocco</option>
+<option value=-8.36>Poland</option>
+<option value=-5.92>Romania</option>
+<option value=-3.55>Russia</option>
+<option value=-0.23>Serbia</option>
+<option value=-7.97>Slovak Republic</option>
+<option value=-6.53>Slovenia</option>
+<option value=6.45>Tajikistan</option>
+<option value=1.63>Tunisia</option>
+<option value=-7.63>Turkey</option>
+<option value=10>Turkmenistan</option>
+<option value=3.84>Ukraine</option>
+<option value=5.54>Uzbekistan</option>
+<option value=0.68>Albania</option>
+<option value=-0.31>Armenia</option>
+<option value=0.17>Azerbaijan</option>
+<option value=2.94>Belarus</option>
+<option value=2.41>Bosnia and Herzegovina</option>
+<option value=-4.89>Bulgaria</option>
+<option value=-4.84>Croatia</option>
+<option value=-3.2>Cyprus</option>
+<option value=9.63>Egypt</option>
+<option value=-9.38>Estonia</option>
+<option value=-3.29>Georgia</option>
+<option value=-2.49>Greece</option>
+<option value=-10>Hungary</option>
+<option value=-1.24>Jordan</option>
+<option value=5.21>Kazakhstan</option>
+<option value=5.87>Kosovo</option>
+<option value=5.57>Kyrgyz Republic</option>
+<option value=-9.18>Latvia</option>
+<option value=-9.46>Lithuania</option>
+<option value=-0.85>Macedonia FYR</option>
+<option value=1.4>Moldova</option>
+<option value=1.13>Mongolia</option>
+<option value=1.67>Montenegro</option>
+<option value=2.52>Morocco</option>
+<option value=-4.53>Poland</option>
+<option value=-4.97>Romania</option>
+<option value=4.19>Russia</option>
+<option value=-2.56>Serbia</option>
+<option value=-9.79>Slovak Republic</option>
+<option value=-8.58>Slovenia</option>
+<option value=9.86>Tajikistan</option>
+<option value=7.02>Tunisia</option>
+<option value=-0.14>Turkey</option>
+<option value=7.38>Turkmenistan</option>
+<option value=5>Ukraine</option>
+<option value=10>Uzbekistan</option>
+<option value=1.88>Albania</option>
+<option value=-1.96>Armenia</option>
+<option value=5.36>Azerbaijan</option>
+<option value=-1.97>Belarus</option>
+<option value=4.29>Bosnia and Herzegovina</option>
+<option value=0.03>Bulgaria</option>
+<option value=-3.55>Croatia</option>
+<option value=-4.4>Cyprus</option>
+<option value=9.34>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=1.63>Georgia</option>
+<option value=-1.48>Greece</option>
+<option value=-4.75>Hungary</option>
+<option value=3.84>Jordan</option>
+<option value=-0.17>Kazakhstan</option>
+<option value=5.42>Kosovo</option>
+<option value=7.43>Kyrgyz Republic</option>
+<option value=-7.56>Latvia</option>
+<option value=-8.73>Lithuania</option>
+<option value=5.21>Macedonia FYR</option>
+<option value=1.2>Moldova</option>
+<option value=-1.53>Mongolia</option>
+<option value=-1.46>Montenegro</option>
+<option value=10>Morocco</option>
+<option value=-4.87>Poland</option>
+<option value=2.16>Romania</option>
+<option value=-3.08>Russia</option>
+<option value=1.5>Serbia</option>
+<option value=-1.99>Slovak Republic</option>
+<option value=-8.57>Slovenia</option>
+<option value=6.4>Tajikistan</option>
+<option value=5.21>Tunisia</option>
+<option value=9.61>Turkey</option>
+<option value=4.07>Turkmenistan</option>
+<option value=-2.77>Ukraine</option>
+<option value=-0.02>Uzbekistan</option>
+<option value=1.11>Albania</option>
+<option value=-0.4>Armenia</option>
+<option value=3.02>Azerbaijan</option>
+<option value=-3.6>Belarus</option>
+<option value=0.48>Bosnia and Herzegovina</option>
+<option value=-5.2>Bulgaria</option>
+<option value=-8.4>Croatia</option>
+<option value=-8.4>Cyprus</option>
+<option value=9.37>Egypt</option>
+<option value=-6.8>Estonia</option>
+<option value=1.75>Georgia</option>
+<option value=2.38>Greece</option>
+<option value=-6.8>Hungary</option>
+<option value=7.46>Jordan</option>
+<option value=2.38>Kazakhstan</option>
+<option value=6.83>Kosovo</option>
+<option value=3.02>Kyrgyz Republic</option>
+<option value=-3.6>Latvia</option>
+<option value=-10>Lithuania</option>
+<option value=3.65>Macedonia FYR</option>
+<option value=-5.2>Moldova</option>
+<option value=-2>Mongolia</option>
+<option value=-0.4>Montenegro</option>
+<option value=10>Morocco</option>
+<option value=-5.2>Poland</option>
+<option value=-5.2>Romania</option>
+<option value=-2>Russia</option>
+<option value=-2>Serbia</option>
+<option value=0.16>Slovak Republic</option>
+<option value=-6.8>Slovenia</option>
+<option value=7.46>Tajikistan</option>
+<option value=3.65>Tunisia</option>
+<option value=3.02>Turkey</option>
+<option value=3.02>Turkmenistan</option>
+<option value=-0.4>Ukraine</option>
+<option value=4.92>Uzbekistan</option>
+<option value=2.39>Albania</option>
+<option value=-1.63>Armenia</option>
+<option value=2.62>Azerbaijan</option>
+<option value=-4.41>Belarus</option>
+<option value=4.72>Bosnia and Herzegovina</option>
+<option value=0.32>Bulgaria</option>
+<option value=1.19>Croatia</option>
+<option value=2.37>Cyprus</option>
+<option value=7.21>Egypt</option>
+<option value=-10>Estonia</option>
+<option value=2.47>Georgia</option>
+<option value=-0.38>Greece</option>
+<option value=-2.04>Hungary</option>
+<option value=0.09>Jordan</option>
+<option value=-1.75>Kazakhstan</option>
+<option value=-3.14>Kosovo</option>
+<option value=2.52>Kyrgyz Republic</option>
+<option value=-6.15>Latvia</option>
+<option value=-5.35>Lithuania</option>
+<option value=4.06>Macedonia FYR</option>
+<option value=-0.11>Moldova</option>
+<option value=-2.24>Mongolia</option>
+<option value=2.45>Montenegro</option>
+<option value=10>Morocco</option>
+<option value=-1.85>Poland</option>
+<option value=3.86>Romania</option>
+<option value=-3.22>Russia</option>
+<option value=0.24>Serbia</option>
+<option value=1.83>Slovak Republic</option>
+<option value=-6.48>Slovenia</option>
+<option value=-1.94>Tajikistan</option>
+<option value=7.6>Tunisia</option>
+<option value=4.97>Turkey</option>
+<option value=-0.69>Turkmenistan</option>
+<option value=-4.45>Ukraine</option>
+<option value=-0.69>Uzbekistan</option>
+</select>
+<br/>
+<br/>
+<label> <b> List of questionaries </b> </label>
+<br/>
+<br/>
+<table>   
+<tr>
+<td>
+<label><b>Does the project facilitate independent imports (supply) to the country (isolated region)? </b></label>
+</td>
+</tr>
+<tr>
+<td>
+<input type="radio" name="questioncode" value="midoQC1SG1"> Yes, the project will see the development of new storage or pipeline facilities which will be used by the private sector and facilitate independent imports in a market dominated by a leading refiner and/or wholesaler (>60% of wholesale market).<br>
+<input type="radio" name="questioncode" value="midoQC1GG1"> Yes, the project will see the development of new storage or pipeline facilities which will be used by the private sector and facilitate independent imports in a market dominated by a leading refiner and/or wholesaler (>30% of wholesale market).<br>
+</td>
+</tr>
+<tr>
+</table>
+<br/>
+<br/>
+<table>
+<td>
+<label> <b>Does the project entail an upgrade of the  refinery units that allows the company to improve its crude flexibility, increase the value added or productivity of its outputreduce costs, and/or better align refinery configuration to market demand? </label>
+</b>
+</td>
+</tr>
+<tr>
+<td>
+<input type="radio" name="questioncode2" value="midoQC2SG1"> Yes,the investment will help a non-dominant, privately owned refinery respond better to national or regional demand patterns. <br>
+<input type="radio" name="questioncode2" value="midoQC2GG1"> Yes,the investment will help a refinery respond better to national or regional demand patterns.<br>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+<table>
+<td>
+<label> <b>Does the project introduce technology for which we can reasonably consider its deployment in this context to be innovative and to have a valuable demonstration effect?</label>
+</b>
+</td>
+</tr>
+<tr>
+<td>
+<input type="radio" name="questioncode3" value="midoQC4SG1"> Yes, technology is in line with international BAT, has never been deployed in this country and is not prevalent in the EBRD region (&lt 2 examples of its deployment) <br>
+<input type="radio" name="questioncode3" value="midoQC4GG1"> Yes the technology is prevalent in the EBRD region (&lt 2 examples of its deployment) but has never been deployed in this country. <br>
+<input type="radio" name="questioncode3" value="midoQC4MG1"> No, the technology cannot be considered innovative but will have some tangible operational benefits. <br>
+
+</td>
+</tr>
+
+</table>
+
+
+<br/>
+<br/>
+<!--<input type="button" value="Calculate" id="calculate" /> -->
+</body>
+</html>
+
+<script type="text/javascript">
+     
+	$("input[name='questioncode']").click(function(){
+        var rval = $("input[name='questioncode']:checked").val();
+        var countryvalue = $("#country").val();
+        
+        alert("Question code 1 : " + rval + " and Countrycode : " + countryvalue);
+        calculatingTI(rval,countryvalue);
+        
+	});
+	
+	$("input[name='questioncode2']").click(function(){
+        var rval = $("input[name='questioncode2']:checked").val();
+        var countryvalue = $("#country").val();
+        
+        alert("Question code 2 : " + rval);
+        calculatingTI(rval,countryvalue);
+        
+    	});
+	
+		$("input[name='questioncode3']").click(function(){
+        var rval = $("input[name='questioncode3']:checked").val();
+        var countryvalue = $("#country").val();
+        
+        alert("Question code 3 : " + rval);
+        calculatingTI(rval,countryvalue);
+	});
+	
+     function calculatingTI(questioncode,countrycodevalues){
+	    
+	     $.ajax(
+            {
+                url: "calculateTI",
+                type:"post",
+               data: { questioncode : questioncode, countrycodevalues : countrycodevalues } ,
+                success: function(result){
+                alert(result);
+                $("#status").text("Resilient value : " + result.Resilient + "  |  " + " Competitive value : " + result.Competitive);
+        }});
+        
+        return 0;
+	}
+	
+	
+</script>
