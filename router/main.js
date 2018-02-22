@@ -5,7 +5,7 @@ module.exports = function(app) {
     var kafka = require('kafka-node');
     var Consumer = kafka.Consumer;
     var Producer = kafka.Producer;
-    var SSE = require('sse-nodejs');
+    var SSE = require('sse-node');
     var client = new kafka.Client('172.16.243.118:5181');
     var producer = new Producer(client);
     var Q = require("q");
@@ -142,6 +142,47 @@ module.exports = function(app) {
             
         }); */
 
+    });
+
+    app.get("/getTIvalues2",function(req,res){
+        console.log("Inside getTIvalues2");
+
+        const sseclient = SSE(req, res);
+
+        const options = {
+                           /* autoCommit: true,
+                            fetchMaxWaitMs: 1000,
+                            fetchMaxBytes: 1024 * 1024,
+                            encoding: "buffer" */
+                            autoCommit: true
+                        };
+
+        const topics = [{
+                    topic: "TItopics4" , partition: 0
+                }];
+
+
+        var consumer = new kafka.HighLevelConsumer(client, topics, options);
+
+        setInterval(
+            function() {
+                 consumer.once('message', function(message) {
+                                       // var buf = new Buffer(message.value, "binary");
+                   // var decodedMessage = JSON.parse(buf.toString());
+                   var decodedMessage = message.value;
+                    console.log(decodedMessage);
+                    //Get json response from kafa topics
+                    //  var responseobj = JSON.parse(message);
+                    //  resilientvalue = responseobj.resilientvalue * adjvalues;  // Kafka topic must generate json response as {resilientvalue : <somevalue>, competitivevalue : <somevalue>}
+                    //  competitivevalue = responseobj.competitivevalue * adjvalues;
+                    //cb(null, decodedMessage);
+                    sseclient.send(decodedMessage);
+                    // return decodedMessage;
+                });
+             },2000);
+
+      
+        //client.onClose(() => console.log("Bye client!"));
     });
 
 }
