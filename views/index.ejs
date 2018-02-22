@@ -503,16 +503,25 @@
         //return 0;
 	}
 
-    var ev = new EventSource('/getTIvalues');
+    var ev = new EventSource('/getTIvalues2');
      
-    ev.addEventListener('getTIvalues', function (result) {
+  /*  ev.addEventListener('getTIvalues', function (result) {
        // document.getElementById("clock").innerHTML += '<h4>' + result.data + '</h4>'
        if(result.data != "undefined")
        {
             $("#status").text("Resilient value : " + result.data);
        }
        
-    })
+    }) */
+
+    ev.onmessage = function(result) {
+       
+        if(result.data != "undefined")
+       {
+            //alert(result.data); //will output 'Hello world!'
+            $("#status").text("Resilient value : " + result.data);
+       } 
+};
 	
 	
 </script>
