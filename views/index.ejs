@@ -11,6 +11,10 @@
 <body>
 <h1><center> TI Calculation </center> </h1>
 <p id="status"></p>
+
+<table>
+<tr>
+<td style="width:20%">
 <label> Country </label> 
 <select id="country" name="country">
 <option value=0.93>Albania</option>
@@ -338,7 +342,31 @@
 <option value=-4.45>Ukraine</option>
 <option value=-0.69>Uzbekistan</option>
 </select>
+</td>
+<td style="width:20%">
+    <label>Sector</label>
+    <select id="sector" name="sector">
+        <option value="energy">Energy</option>
+    </sector>
+</td>
+<td style="width:20%">
+    <label>Sub Sector</label>
+    <select id="subsector" name="subsector">
+        <option value="midstreamoil">Midstream Oil</option>
+        <option value="midstreamgas">Midstream Gas</option>
+    </sector>
+</td>
+<td style="width:20%">
+    <label>TI Quality</label>
+    <select id="tiquality" name="tiquality">
+        <option value="resilient">Resilient</option>
+        <option value="competitive">Competitive</option>
+    </sector>
+</td>
+</tr>
 <br/>
+<br/>
+</table>
 <br/>
 <label> <b> List of questionaries </b> </label>
 <br/>
@@ -346,29 +374,33 @@
 <table>   
 <tr>
 <td>
-<label><b>Does the project facilitate independent imports (supply) to the country (isolated region)? </b></label>
+<label><b>Does the project support capital market development through the introduction of a new type of financing or financial instrument currently missing in the market ? </b></label>
 </td>
 </tr>
 <tr>
 <td>
-<input type="radio" name="questioncode" value="midoQC1SG1"> Yes, the project will see the development of new storage or pipeline facilities which will be used by the private sector and facilitate independent imports in a market dominated by a leading refiner and/or wholesaler (>60% of wholesale market).<br>
-<input type="radio" name="questioncode" value="midoQC1GG1"> Yes, the project will see the development of new storage or pipeline facilities which will be used by the private sector and facilitate independent imports in a market dominated by a leading refiner and/or wholesaler (>30% of wholesale market).<br>
+<input type="radio" name="questioncode" value="midoQR4SG1"> Yes, the project introduces a new type of financing or financial instrument for the first time in the country <br>
+<input type="radio" name="questioncode" value="midoQR4GG1"> Yes, the project introduces a new type of financing or financial instrument for the first few times in the country <br>
+<input type="radio" name="questioncode" value="midoQR4GG2"> Yes, the project contributes to relaunching capital market instruments in a highly challenging and/or post-crisis environment <br>
+<input type="radio" name="questioncode" value="midoQR4MG1"> Yes, the project supports capital market development through the establishment of a relatively new type of financing or financial instrument that is not yet common in the market <br>
+
 </td>
 </tr>
-<tr>
 </table>
+
 <br/>
 <br/>
+
 <table>
+<tr>
 <td>
-<label> <b>Does the project entail an upgrade of the  refinery units that allows the company to improve its crude flexibility, increase the value added or productivity of its outputreduce costs, and/or better align refinery configuration to market demand? </label>
+<label> <b>Does the project entail financial restructuring making the company less vulnerable to shocks? </label>
 </b>
 </td>
 </tr>
 <tr>
 <td>
-<input type="radio" name="questioncode2" value="midoQC2SG1"> Yes,the investment will help a non-dominant, privately owned refinery respond better to national or regional demand patterns. <br>
-<input type="radio" name="questioncode2" value="midoQC2GG1"> Yes,the investment will help a refinery respond better to national or regional demand patterns.<br>
+<input type="radio" name="questioncode2" value="midoQR5MG1"> Yes, the project entails financial restructuring making the company less vulnerable to shocks, for instance by affecting the asset liability/FX mismatch in the company <br>
 </td>
 </tr>
 
@@ -376,21 +408,41 @@
 
 <br/>
 <br/>
+
 <table>
+<tr>
 <td>
-<label> <b>Does the project introduce technology for which we can reasonably consider its deployment in this context to be innovative and to have a valuable demonstration effect?</label>
+<label><b>Does the project help a non-EU country to increase its oil storage capacity to conform with mandatory EU stocking obligation levels? </label>
 </b>
 </td>
 </tr>
 <tr>
 <td>
-<input type="radio" name="questioncode3" value="midoQC4SG1"> Yes, technology is in line with international BAT, has never been deployed in this country and is not prevalent in the EBRD region (&lt 2 examples of its deployment) <br>
-<input type="radio" name="questioncode3" value="midoQC4GG1"> Yes the technology is prevalent in the EBRD region (&lt 2 examples of its deployment) but has never been deployed in this country. <br>
-<input type="radio" name="questioncode3" value="midoQC4MG1"> No, the technology cannot be considered innovative but will have some tangible operational benefits. <br>
+<input type="radio" name="questioncode3" value="midoQR2MG1">Yes, the project helps a non-EU country to increase its oil storage capacity to conform with mandatory EU stocking obligation levels. <br>
 
 </td>
 </tr>
+</table>
 
+<br/>
+<br/>
+
+<table>
+<tr>
+<td>
+<label><b>Does the project involve a policy dialogue initiative supported by the Bank? </label>
+</b>
+</td>
+</tr>
+<tr>
+<td>
+<input type="radio" name="questioncode4" value="midoQR6EE1">Yes, the project entails a policy dialogue initiative that has been assessed as Excellent by the sector economist. <br>
+<input type="radio" name="questioncode4" value="midoQR6SG1">Yes, the project entails a policy dialogue initiative that has been assessed as Strong Good by the sector economist. <br>
+<input type="radio" name="questioncode4" value="midoQR6GG1">Yes, the project entails a policy dialogue initiative that has been assessed as Good by the sector economist. <br>
+<input type="radio" name="questioncode4" value="midoQR6MG1">Yes, the project entails a policy dialogue initiative that has been assessed as Moderate Good by the sector economist. <br>
+
+</td>
+</tr>
 </table>
 
 
@@ -428,6 +480,14 @@
         calculatingTI(rval,countryvalue);
 	});
 	
+	$("input[name='questioncode4']").click(function(){
+        var rval = $("input[name='questioncode4']:checked").val();
+        var countryvalue = $("#country").val();
+        
+        alert("Question code 4 : " + rval);
+        calculatingTI(rval,countryvalue);
+	});
+	
      function calculatingTI(questioncode,countrycodevalues){
 	    
 	     $.ajax(
@@ -440,8 +500,19 @@
                 $("#status").text("Resilient value : " + result.Resilient + "  |  " + " Competitive value : " + result.Competitive);
         }});
         
-        return 0;
+        //return 0;
 	}
+
+    var ev = new EventSource('/getTIvalues');
+     
+    ev.addEventListener('getTIvalues', function (result) {
+       // document.getElementById("clock").innerHTML += '<h4>' + result.data + '</h4>'
+       if(result.data != "undefined")
+       {
+            $("#status").text("Resilient value : " + result.data);
+       }
+       
+    })
 	
 	
 </script>
