@@ -84,12 +84,7 @@ module.exports = function(app) {
     app.get("/getTIvalues", function(req, res) {
 
         var app1 = SSE(res);
-
-        setInterval(
-            function() {
-                async.series([
-                    function(cb) {
-                        const options = {
+        const options = {
                            /* autoCommit: true,
                             fetchMaxWaitMs: 1000,
                             fetchMaxBytes: 1024 * 1024,
@@ -97,12 +92,18 @@ module.exports = function(app) {
                             autoCommit: true
                         };
 
-                         const topics = [{
-                                        topic: "TItopics4" , partition: 0
-                                    }];
+     const topics = [{
+                    topic: "TItopics4" , partition: 0
+                }];
 
-                    
-                          var consumer = new kafka.HighLevelConsumer(client, topics, options);
+
+      var consumer = new kafka.HighLevelConsumer(client, topics, options);
+
+        setInterval(
+            function() {
+                async.series([
+                    function(cb) {
+                        
 
                             consumer.once('message', function(message) {
                                // var buf = new Buffer(message.value, "binary");
@@ -123,7 +124,7 @@ module.exports = function(app) {
                     console.log(err);
                     console.log('data', data);
                     console.log("Adjvalues", adjvalues);
-                    data = data *adjvalues;
+                    //data = data *adjvalues;
 
                     app1.sendEvent('getTIvalues', function() {
                         return data;
